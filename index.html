@@ -3,203 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rankiq – SEO Systems | Professional SEO Services</title>
+  <title>Rankiq – SEO Operations by Thoufiq Ahamed</title>
+  <meta name="description" content="Rankiq provides engineering-led Search Engine Optimization systems to grow your business. Learn SEO myths, technical insights, and best practices.">
   
-  <meta name="description" content="Rankiq provides engineering-led Search Engine Optimization systems for global brands. Learn the truth behind SEO myths and scale your business.">
-  <link rel="canonical" href="https://thoufiqahamed.in/">
-
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://unpkg.com/split-type" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    :root { --accent: #6366f1; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #fefefe; color: #0f172a; overflow-x: hidden; }
+    :root { --accent: #4f46e5; --accent2: #7c3aed; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #0f172a; overflow-x: hidden; }
 
-    @media (prefers-reduced-motion: reduce) {
-      .reveal, .char, .blob { transition: none !important; animation: none !important; transform: none !important; opacity: 1 !important; }
-    }
-
-    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform, opacity; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.4s cubic-bezier(0.2,1,0.3,1); will-change: transform, opacity; }
     .reveal.active { opacity: 1; transform: translateY(0); }
-    .title-clip { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
-    .char { transform: translateY(110%); display: inline-block; }
-    .hero-bg { position: relative; background: radial-gradient(circle at top right, #f0f0ff, #ffffff); }
-    .blob { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; z-index: 0; }
-    .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(226, 232, 240, 0.6); }
-    .btn-primary { background: linear-gradient(135deg, #4f46e5, #7c3aed); transition: all 0.2s ease; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 35px -10px rgba(79, 70, 229, 0.6); }
 
-    .action-bar { position: fixed; top: 50%; right: 20px; transform: translateY(-50%); display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
-    .action-btn { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: white; border: 1px solid rgba(99, 102, 241, 0.2); color: #6366f1; box-shadow: 0 10px 25px rgba(99, 102, 241, 0.1); transition: 0.3s; }
-    .action-btn:hover { background: #6366f1; color: white; transform: translateX(-8px); }
+    .hero-bg { position: relative; background: linear-gradient(135deg,#4f46e5,#7c3aed); color: #fff; }
+    .blob { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0; top: -150px; right: -150px; }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 35px -10px rgba(79,70,229,0.6); }
 
-    .trust-badge { position: fixed; bottom:5px; left:5px; background:white; border:1px solid #e2e8f0; shadow-lg; px-4 py-2; border-radius:9999px; display:flex; align-items:center; gap:2px; font-size:12px; font-weight:bold; color:#64748b; z-index:1000;}
-    .roi-input { width:100%; padding:0.5rem 1rem; border:1px solid #cbd5e1; border-radius:0.5rem; outline:none; font-weight:bold; color:#334155; }
+    .glass { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); border: 1px solid rgba(226,232,240,0.6); }
+
+    .faq-item { border-bottom: 1px solid #e2e8f0; padding: 1rem 0; cursor: pointer; }
+    .faq-answer { display: none; padding-top: 0.5rem; color: #475569; }
   </style>
 </head>
 <body>
 
-<!-- Trust Badge -->
-<div class="trust-badge">
-  <i class="fa-solid fa-shield-halved text-emerald-500"></i>
-  <span>SSL SECURE CONNECTION ACTIVE</span>
+<!-- Fixed WhatsApp/Phone -->
+<div class="fixed top-1/2 right-4 transform -translate-y-1/2 flex flex-col gap-4 z-50">
+  <a href="https://wa.me/9385352585" target="_blank" class="btn-primary w-12 h-12 flex items-center justify-center rounded-full text-white text-lg">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <a href="tel:+9385352585" class="btn-primary w-12 h-12 flex items-center justify-center rounded-full text-white text-lg">
+    <i class="fa-solid fa-phone"></i>
+  </a>
 </div>
 
-<!-- Fixed Actions -->
-<div class="action-bar">
-    <a href="https://wa.me/9385352585" target="_blank" rel="noopener noreferrer" class="action-btn" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
-    <a href="tel:+9385352585" class="action-btn" aria-label="Call Now"><i class="fa-solid fa-phone text-lg"></i></a>
-    <a href="mailto:contact@thoufiqahamed.in" class="action-btn" aria-label="Email Us"><i class="fa-solid fa-envelope text-lg"></i></a>
-</div>
-
-<!-- Header -->
-<header class="fixed top-0 w-full z-50 glass border-b border-slate-200 px-6 py-4 flex justify-between items-center">
-  <div class="font-black text-2xl tracking-tighter text-indigo-600">RANKIQ</div>
+<header class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center glass">
+  <div class="font-black text-2xl text-white tracking-tighter">RANKIQ</div>
 </header>
 
-<!-- Hero -->
-<section id="home" class="hero-bg min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
+<section class="hero-bg min-h-screen flex items-center justify-center px-6 pt-24 relative overflow-hidden">
   <div class="blob"></div>
-  <div class="max-w-5xl text-center relative z-10">
-    <div class="title-clip mb-6">
-      <h1 id="hero-title" class="text-5xl md:text-8xl font-black leading-[1.05] tracking-tight text-slate-900">
-        Search Engine Optimization Systems
-      </h1>
-    </div>
-    <p id="hero-desc" class="text-slate-500 text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-0 translate-y-4">
-        Learn the truth behind SEO myths. Build permanent digital authority with engineering-led SEO protocols.
-    </p>
-    <div id="hero-cta" class="opacity-0 translate-y-4">
-      <a href="#contact" class="btn-primary text-white px-12 py-5 rounded-2xl font-black text-lg inline-block tracking-tight">Claim Free Audit</a>
-    </div>
+  <div class="max-w-4xl text-center z-10">
+    <h1 id="hero-title" class="text-5xl md:text-7xl font-black leading-tight mb-6">Engineering Your SEO Success</h1>
+    <p id="hero-desc" class="text-lg md:text-xl mb-10 opacity-0">Break SEO myths, learn technical strategies, and grow your digital authority. Rankiq provides step-by-step systems for modern businesses.</p>
+    <a href="#contact" id="hero-cta" class="btn-primary px-10 py-5 rounded-2xl font-black text-lg inline-block opacity-0">Claim Free Audit</a>
   </div>
 </section>
 
-<!-- About / SEO Myth -->
-<section id="about" class="py-24 px-6 max-w-7xl mx-auto">
-  <div class="grid lg:grid-cols-2 gap-20 items-center">
-    <div class="reveal">
-      <h2 class="text-4xl font-black mb-8">The Scientific Reality of SEO</h2>
-      <div class="space-y-6 text-slate-600 text-lg leading-relaxed text-justify">
-        <p><strong>The Hidden Truth:</strong> SEO is not about tricking Google. Modern SEO is engineering-driven, focusing on <strong>E-E-A-T</strong>—Experience, Expertise, Authoritativeness, Trustworthiness.</p>
-        <p><strong>Technical Signals:</strong> Fast servers, structured data, optimized crawl budget, and clean code ensure your pages rank with lasting authority.</p>
-        <p><strong>SEO Myths:</strong> Many agencies promise magic keywords. In reality, SEO is about human-focused content, site structure, and measurable results.</p>
-      </div>
+<!-- SEO Phases -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+  <h2 class="text-4xl font-black text-center mb-16">Our 3-Phase SEO Protocol</h2>
+  <div class="grid md:grid-cols-3 gap-10">
+
+    <div class="reveal glass p-8 rounded-3xl flex flex-col border-t-4 border-indigo-500">
+      <h3 class="text-xl font-black mb-4">Phase 1: Integrity</h3>
+      <p class="text-slate-700 mb-4">We remove crawl blockers, fix server issues, and optimize your website structure so Google can index your pages instantly. Learn how technical architecture boosts visibility.</p>
+      <ul class="list-disc list-inside text-slate-600">
+        <li>Server & Page Speed Optimization</li>
+        <li>Structured Data Integration</li>
+        <li>Crawl Budget Management</li>
+      </ul>
     </div>
-    <div class="reveal flex justify-center">
-        <img src="https://images.unsplash.com/photo-1551288049-bbbda546697c?q=80&w=400" alt="SEO Illustration" class="rounded-xl shadow-2xl">
+
+    <div class="reveal glass p-8 rounded-3xl flex flex-col border-t-4 border-purple-500">
+      <h3 class="text-xl font-black mb-4">Phase 2: Intent</h3>
+      <p class="text-slate-700 mb-4">We engineer content to satisfy user intent, ensuring your pages answer exactly what your audience is searching for. Semantic relevance is the key.</p>
+      <ul class="list-disc list-inside text-slate-600">
+        <li>Landing Page Optimization</li>
+        <li>Content Clustering & Internal Linking</li>
+        <li>Keyword Intent Mapping</li>
+      </ul>
     </div>
+
+    <div class="reveal glass p-8 rounded-3xl flex flex-col border-t-4 border-emerald-500">
+      <h3 class="text-xl font-black mb-4">Phase 3: Scaling</h3>
+      <p class="text-slate-700 mb-4">We build authority signals with high-quality citations and backlinks. Establish a digital moat around your brand for long-term rankings.</p>
+      <ul class="list-disc list-inside text-slate-600">
+        <li>High-Authority Backlinks</li>
+        <li>Digital PR Strategies</li>
+        <li>Citation & Trust Signal Building</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
-<!-- Services / Phases -->
-<section id="services" class="py-24 px-6 bg-slate-50">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-4xl font-black text-center mb-16">3-Phase SEO Engineering Protocol</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      
-      <div class="reveal glass p-10 rounded-[2.5rem] border-t-4 border-indigo-500 h-full flex flex-col">
-        <h3 class="text-xl font-black mb-4">Phase 1: Integrity</h3>
-        <p class="text-slate-500 text-sm leading-relaxed text-justify"><strong>Detail:</strong> Resolve crawl blockers, optimize server speed, clean code, and prioritize top pages so Google indexes the right content.</p>
-      </div>
-
-      <div class="reveal glass p-10 rounded-[2.5rem] border-t-4 border-purple-500 h-full flex flex-col">
-        <h3 class="text-xl font-black mb-4">Phase 2: Intent</h3>
-        <p class="text-slate-500 text-sm leading-relaxed text-justify"><strong>Detail:</strong> Structure content to match user intent—awareness, research, or transaction—ensuring your website answers queries better than competitors.</p>
-      </div>
-
-      <div class="reveal glass p-10 rounded-[2.5rem] border-t-4 border-emerald-500 h-full flex flex-col">
-        <h3 class="text-xl font-black mb-4">Phase 3: Scaling</h3>
-        <p class="text-slate-500 text-sm leading-relaxed text-justify"><strong>Detail:</strong> Earn high-authority references and digital PR footprints. Build trust signals that Google uses to rank you consistently over time.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ROI Estimator -->
+<!-- FAQ -->
 <section class="py-24 px-6 max-w-4xl mx-auto">
-  <div class="glass p-10 rounded-[3rem] shadow-xl reveal border-2 border-indigo-50">
-      <h2 class="text-3xl font-black mb-8 text-center">Business Growth Estimator</h2>
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div class="space-y-4">
-              <div>
-                  <label for="roi-traffic" class="text-[12px] font-black uppercase text-slate-400 block mb-2">Current Monthly Traffic</label>
-                  <input type="number" id="roi-traffic" value="5000" class="roi-input" oninput="calculateROI()">
-              </div>
-              <div>
-                  <label for="roi-val" class="text-[12px] font-black uppercase text-slate-400 block mb-2">Average Sale Value (₹)</label>
-                  <input type="number" id="roi-val" value="5000" class="roi-input" oninput="calculateROI()">
-              </div>
-              <p class="text-[12px] text-slate-400 leading-tight">Logic: (Traffic × 2) × (Base Conversion 2% + SEO Lift 2%) × Value</p>
-          </div>
-          <div class="bg-indigo-600 p-10 rounded-[2.5rem] text-white text-center shadow-2xl">
-              <span class="text-xs uppercase font-bold opacity-80 tracking-widest">Projected Monthly Revenue</span>
-              <div class="text-4xl md:text-5xl font-black mt-3">₹<span id="roi-result">1,000,000</span></div>
-              <p class="text-[12px] mt-4 opacity-70">Estimated via technical SEO implementation.</p>
-          </div>
-      </div>
+  <h2 class="text-4xl font-black text-center mb-12">SEO Myths & FAQs</h2>
+  <div class="space-y-4">
+    <div class="faq-item">Is SEO just about keywords?<div class="faq-answer">No. Modern SEO focuses on technical health, user intent, content authority, and experience.</div></div>
+    <div class="faq-item">Can I trick Google with backlinks?<div class="faq-answer">No. Low-quality backlinks can penalize you. Focus on high-authority citations and real engagement.</div></div>
+    <div class="faq-item">Do I need to update content daily?<div class="faq-answer">Not always. Quality and relevance matter more than frequency. Update based on intent shifts or new trends.</div></div>
+    <div class="faq-item">Will SEO give instant results?<div class="faq-answer">SEO takes time. Proper technical, content, and authority signals compound over months.</div></div>
+    <div class="faq-item">Does mobile optimization matter?<div class="faq-answer">Yes. Google uses mobile-first indexing. Fast, responsive mobile design improves rankings and UX.</div></div>
+    <div class="faq-item">Is SEO only for Google?<div class="faq-answer">While Google dominates, technical SEO improves indexing and usability across all search engines.</div></div>
   </div>
 </section>
 
-<!-- Contact / Formspree -->
+<!-- Contact Form -->
 <section id="contact" class="py-24 px-6 max-w-3xl mx-auto text-center">
-  <div class="reveal">
-      <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">Claim Your Audit</h2>
-      <p class="text-slate-500 text-lg mb-12">Submit your URL for a deep technical review.</p>
-      <form action="https://formspree.io/f/xpqjylng" method="POST" class="space-y-4 text-left">
-          <div class="grid md:grid-cols-2 gap-4">
-              <input name="name" required placeholder="Full Name" class="w-full p-4 rounded-xl bg-slate-50 border outline-none focus:border-indigo-500">
-              <input name="email" type="email" required placeholder="Business Email" class="w-full p-4 rounded-xl bg-slate-50 border outline-none focus:border-indigo-500">
-          </div>
-          <textarea name="message" required placeholder="Website URL & Goals..." class="w-full p-4 rounded-xl bg-slate-50 border outline-none focus:border-indigo-500 h-32"></textarea>
-          <button type="submit" class="btn-primary w-full text-white font-black py-4 rounded-xl text-lg uppercase tracking-widest">Submit Inquiry</button>
-      </form>
-  </div>
+  <h2 class="text-4xl font-black mb-6">Claim Your Audit</h2>
+  <p class="text-slate-700 mb-8">Submit your URL for a free technical review. Learn exactly what needs fixing.</p>
+  <form action="https://formspree.io/f/xpqjylng" method="POST" class="space-y-4 text-left">
+    <div class="grid md:grid-cols-2 gap-4">
+      <input name="name" required placeholder="Full Name" class="w-full p-4 rounded-xl border focus:border-indigo-500 outline-none">
+      <input name="email" type="email" required placeholder="Business Email" class="w-full p-4 rounded-xl border focus:border-indigo-500 outline-none">
+    </div>
+    <textarea name="message" required placeholder="Website URL & Goals" class="w-full p-4 rounded-xl border focus:border-indigo-500 outline-none h-32"></textarea>
+    <button type="submit" class="btn-primary w-full py-4 rounded-xl text-white font-black text-lg">Submit Inquiry</button>
+  </form>
 </section>
 
-<!-- Footer -->
-<footer class="py-12 border-t text-center text-slate-400 text-[12px] font-black uppercase tracking-widest">
-  <p>© 2026 Rankiq. Designed by Thoufiq Ahamed.</p>
+<footer class="py-12 text-center text-slate-400 text-sm font-black uppercase">
+  <p>© 2026 Rankiq – SEO Operations by Thoufiq Ahamed</p>
 </footer>
 
 <script>
-// ROI Calculation
-function calculateROI() {
-    const traffic = parseFloat(document.getElementById('roi-traffic').value) || 0;
-    const val = parseFloat(document.getElementById('roi-val').value) || 0;
-    const result = Math.round((traffic * 2) * 0.04 * val); 
-    document.getElementById('roi-result').innerText = result.toLocaleString('en-IN');
-}
+document.addEventListener('DOMContentLoaded', () => {
+  // Reveal on scroll
+  function reveal() {
+    document.querySelectorAll('.reveal').forEach(el => {
+      if(el.getBoundingClientRect().top < window.innerHeight*0.9) el.classList.add('active');
+    });
+  }
+  window.addEventListener('scroll', reveal);
+  reveal();
 
-// Reveal on scroll
-function reveal() {
-  document.querySelectorAll('.reveal').forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight * 0.9) el.classList.add('active');
+  // Hero animation
+  if(typeof SplitType !== 'undefined' && typeof gsap !== 'undefined'){
+    const split = new SplitType('#hero-title',{types:'chars'});
+    gsap.to('.char',{y:0,stagger:0.02,duration:0.35,ease:"power4.out"});
+    gsap.to('#hero-desc',{opacity:1,y:0,duration:0.4,delay:0.2});
+    gsap.to('#hero-cta',{opacity:1,y:0,duration:0.4,delay:0.3});
+  }
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.addEventListener('click',()=> {
+      const ans = item.querySelector('.faq-answer');
+      ans.style.display = ans.style.display==='block'?'none':'block';
+    });
   });
-}
-window.addEventListener('scroll', reveal);
-window.addEventListener('DOMContentLoaded', () => {
-    if(typeof SplitType !== 'undefined' && typeof gsap !== 'undefined') {
-        const split = new SplitType('#hero-title', { types: 'chars' });
-        gsap.to('.char', { y: 0, stagger: 0.02, duration: 0.35, ease: "power4.out" });
-        gsap.to('#hero-desc', { opacity: 1, y: 0, duration: 0.4, delay: 0.2 });
-        gsap.to('#hero-cta', { opacity: 1, y: 0, duration: 0.4, delay: 0.3 });
-    }
-    reveal();
-    calculateROI();
-});
-
-// Blob parallax
-document.addEventListener('mousemove', (e) => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 25;
-  const y = (e.clientY / window.innerHeight - 0.5) * 25;
-  const blob = document.querySelector('.blob');
-  if(blob) gsap.to(blob, { x: x, y: y, duration: 1, ease: "power2.out" });
 });
 </script>
-
 </body>
 </html>
